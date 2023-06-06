@@ -1,0 +1,6 @@
+<van-cell center title-style="color:#646566" required="{{field.required}}" title="{{field.label}}">
+    <van-uploader 
+    file-list="{{ fileList }}" 
+    bind:after-read="afterRead"
+     />
+</van-cell>

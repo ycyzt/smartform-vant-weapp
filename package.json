@@ -1,0 +1,32 @@
+{
+  "name": "smartform-vant-weapp",
+  "version": "0.0.3",
+  "description": "smartform for vant-weapp",
+  "main": "dist/smartform-vant-weapp.es.js",
+  "module": "dist/smartform-vant-weapp.es.js",
+  "unpkg": "dist/smartform-vant-weapp.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycyzt/smartform-vant-weapp.git"
+  },
+  "keywords": [
+    "smartform"
+  ],
+  "author": "ycyzt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ycyzt/smartform-vant-weapp/issues"
+  },
+  "homepage": "https://github.com/ycyzt/smartform-vant-weapp#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.14",
+    "mini-smooth-signature": "^1.0.7"
+  },
+}

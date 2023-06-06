@@ -1,0 +1,17 @@
+.ptitle{
+    text-align: center;
+    padding: 20rpx;
+    color: #666;
+}
+
+.signature1{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border:1px solid #ccc;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 50rpx;
+}
