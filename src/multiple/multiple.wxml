@@ -1,0 +1,35 @@
+<van-cell 
+ title-style="color:#646566" 
+ required="{{field.required}}" 
+ title="{{field.label}}" 
+ is-link="{{true}}" 
+ catch:click="showPopup"
+ >
+    <view class="tag" wx:for="{{selectedItems}}" wx:key="value">
+        <van-tag
+        closeable
+        size="medium"
+        catch:close="onDeleteItem"
+        data-value="{{item.value}}"
+        catch:tap="pass"
+        closeable="{{!field.readonly}}"
+        >
+        {{item.path}}
+        </van-tag>
+    </view>
+</van-cell>
+<van-popup 
+    show="{{ showpop }}" 
+    round 
+    closeable 
+    position="bottom" 
+    bind:close="hidePopup">
+    <van-cascader
+        wx:if="{{showpop}}"
+        value="{{ field.value }}"
+        title="{{'请选择'+field.label}}"
+        options="{{ field.options }}"
+        bind:close="onClose"
+        bind:finish="onFinish"
+    />
+</van-popup>

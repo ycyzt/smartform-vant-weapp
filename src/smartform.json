@@ -1,0 +1,19 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cascader": "@vant/weapp/cascader/index",
+    "van-button": "@vant/weapp/button/index",
+    "cascader":"./cascader/cascader",
+    "carplate":"./carplate/carplate",
+    "xswitch":"./switch/switch",
+    "upload":"./upload/upload",
+    "xinput":"./input/input",
+    "multiple":"./multiple/multiple",
+    "handwriter":"./handwriter/handwriter"
+  }
+}

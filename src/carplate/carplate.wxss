@@ -1,0 +1,95 @@
+:host {
+  width: 100%;
+}
+
+.word{
+  display: inline-block;
+  border:1px solid #ccc;
+  background-color: white;
+  font-size: 40rpx;
+  margin: 10rpx;
+  padding: 10rpx 10rpx;
+  text-align: center;
+  width: 40rpx;
+  height: 60rpx;
+  vertical-align: top;
+}
+
+.value {
+  text-align: center;
+  padding:20rpx;
+  vertical-align: top;
+}
+
+.current{
+  border:1px solid #1989fa!important;
+}
+
+
+.vehicle-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eee;
+
+}
+.del{
+  background-color: #ddd!important;
+}
+.vehicle-panel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vehicle-panel-row-last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vehicle-panel-row-button {
+  background-color: #fff;
+  margin: 5rpx;
+  padding: 5rpx;
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}
+
+.vehicle-panel-row-button-number {
+  background-color: #eee;
+}
+
+.vehicle-panel-row-button-last {
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.vehicle-hover {
+  background-color: #ccc;
+}
+
+.vehicle-panel-row-button-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle-en-button-delete {
+  width: 55rpx;
+  height: 85rpx;
+}
+
+.vehicle-panel-ok {
+  background-image: linear-gradient(0deg, #00a878 0%, #00cddc 100%),
+    linear-gradient(#413f3f, #413f3f);
+  color: #fff;
+  width: 150rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+}

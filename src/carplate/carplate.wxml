@@ -1,0 +1,65 @@
+<van-field label="{{field.label?field.label:''}}" value="{{ value }}" placeholder="{{ field.placeholder?field.placeholder:'请选择'+field.label }}" required="{{field.required?true:false}}" is-link="{{!field.readonly}}" readonly bind:tap="showPopup" />
+<van-popup show="{{ showpop }}" round closeable position="bottom" bind:close="hidePopup">
+  <view class="vehicle-panel">
+    <view class='value'>
+      <view  wx:key="item" class="word {{curindex==index?'current':''}}" wx:for="{{fieldValue}}" bindtap="onClick" data-value="{{index}}">
+        {{item=='_'?' ':item}}
+      </view>
+    </view>
+    <!-- 省份简写键盘 -->
+    <block wx:if="{{curindex==0}}">
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' style="border:{{buttonBorder}}" wx:for="{{keyVehicle1}}" bindtap='vehicleTap' data-value="{{item}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+      </view>
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' style="border:{{buttonBorder}}" wx:for="{{keyVehicle2}}" bindtap='vehicleTap' data-value="{{item}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+      </view>
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' style="border:{{buttonBorder}}" wx:for="{{keyVehicle3}}" bindtap='vehicleTap' data-value="{{item}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+      </view>
+      <view class="vehicle-panel-row-last">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class="vehicle-panel-row-button" bindtap='vehicleTap' data-value="{{item}}" wx:for="{{keyVehicle4}}" style="border:{{buttonBorder}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <!-- 数字键盘 -->
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' bindtap='vehicleTap' data-value="{{item}}" wx:for="{{keyNumber}}" style="border:{{buttonBorder}}" wx:for-index="idx" wx:key="item">
+          {{item}}
+        </view>
+      </view>
+      <!-- 英文键盘 -->
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' style="border:{{buttonBorder}}" wx:for="{{keyEnInput1}}" bindtap='vehicleTap' data-value="{{item}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+      </view>
+      <view class="vehicle-panel-row">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button' style="border:{{buttonBorder}}" wx:for="{{keyEnInput2}}" bindtap='vehicleTap' data-value="{{item}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+        <view hover-class="vehicle-hover" style="border:{{buttonBorder}}" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button vehicle-panel-row-button-img'>
+          <image src='./back.png' class='vehicle-en-button-delete' bindtap='vehicleTap' data-value="delete" mode='aspectFit'>
+            删除
+          </image>
+        </view>
+      </view>
+      <view class="vehicle-panel-row-last">
+        <view hover-class="vehicle-hover" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button vehicle-panel-row-button-last' bindtap='vehicleTap' style="border:{{buttonBorder}}" data-value="{{item}}" wx:for="{{keyEnInput3}}" wx:for-index="idx" wx:key="idx">
+          {{item}}
+        </view>
+        <view hover-class="vehicle-hover" style="border:{{buttonBorder}}" hover-start-time="10" hover-stay-time="100" class='vehicle-panel-row-button vehicle-panel-ok' bindtap='vehicleTap' data-value="ok">
+          完成
+        </view>
+      </view>
+    </block>
+  </view>
+</van-popup>

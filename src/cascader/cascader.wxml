@@ -1,0 +1,23 @@
+<van-field 
+    label="{{field.label?field.label:''}}" 
+    value="{{ fieldValue }}" 
+    placeholder="{{ field.placeholder?field.placeholder:'请选择'+field.label }}" 
+    required="{{field.required?true:false}}" 
+    is-link="{{!field.readonly}}"
+    readonly
+    bind:tap="showPopup"/>
+<van-popup 
+    show="{{ showpop }}" 
+    round 
+    closeable 
+    position="bottom" 
+    bind:close="hidePopup">
+    <van-cascader
+        wx:if="{{showpop}}"
+        value="{{ field.value }}"
+        title="{{'请选择'+field.label}}"
+        options="{{ field.options }}"
+        bind:close="onClose"
+        bind:finish="onFinish"
+    />
+</van-popup>

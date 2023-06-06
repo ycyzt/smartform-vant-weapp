@@ -1,0 +1,19 @@
+<view>
+  <view class="sform">
+    <view class="hint" v-if="{{title}}">{{ title }}</view>
+    <van-cell-group>
+      <block wx:for="{{fields}}" wx:for-item="field" wx:for-index="index" wx:key="key">
+        <view wx:if="{{!field.hide}}">
+          <xinput wx:if="{{field.type === 'text'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate" value="{{values[field.key]}}"></xinput>
+          <carplate wx:if="{{field.type === 'carplate'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate"></carplate>
+          <cascader wx:if="{{field.type === 'cascader'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate"></cascader>
+          <multiple wx:if="{{field.type === 'multiple'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate"></multiple>
+          <xswitch wx:if="{{field.type === 'switch'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate"></xswitch>
+          <upload wx:if="{{field.type === 'upload'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate"></upload>
+          <handwriter wx:if="{{field.type === 'handwriter'}}" id="{{field.key}}" field="{{field}}" bind:update="onUpdate" bind:popup="onPopup"></handwriter>
+        </view>
+      </block>
+    </van-cell-group>
+    <van-button block wx-if="{{button}}" type="info" bind:click="onClick">{{ button }}</van-button>
+  </view>
+</view>

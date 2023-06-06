@@ -1,0 +1,7 @@
+<van-cell center title-style="color:#646566" required="{{field.required}}" title="{{field.label}}">
+    <van-switch 
+    size="48rpx"
+    checked="{{ value }}" 
+    disabled="{{ field.readonly }}" 
+    bind:change="onUpdate" />
+</van-cell>

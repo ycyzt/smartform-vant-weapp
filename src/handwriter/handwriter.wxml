@@ -1,0 +1,13 @@
+<van-cell center title-style="color:#646566" required="{{field.required}}" title="{{field.label}}" is-link="{{true}}" bind:click="showPopup">
+  <van-image wx:if="{{value}}" width="300rpx" height="100rpx" fit="contain" src="{{value}}" />
+</van-cell>
+<van-popup show="{{ showpop }}" round closeable position="bottom" bind:close="hidePopup">
+  <view class="ptitle">{{field.label}}</view>
+  <view class="container1">
+    <canvas type="2d" id="canvas" class="signature1" style="height:{{height1}}px;" disable-scroll="{{true}}" bindtouchstart="handleTouchStart1" bindtouchmove="handleTouchMove1" bindtouchcancel="handleTouchEnd1" bindtouchend="handleTouchEnd1"></canvas>
+    <view class="btns">
+      <van-button type="info" plain bind:click="handleClear1" >清空</van-button>
+      <van-button type="info" bind:click="onConfirm" >确定</van-button>
+    </view>
+  </view>
+</van-popup>

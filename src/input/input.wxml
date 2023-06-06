@@ -1,0 +1,11 @@
+<view class="item">
+<van-field 
+    wx:if="{{field.type == 'text'}}" 
+    label="{{field.label}}" 
+    model:value="{{ value }}" 
+    placeholder="{{ field.placeholder?field.placeholder:'请输入'+field.label }}" 
+    required="{{field.required?true:false}}" 
+    readonly="{{field.readonly?true:false}}"
+    type="{{field.keyboard?field.keyboard:'text'}}"
+    bind:change="onUpdate" />
+</view>
