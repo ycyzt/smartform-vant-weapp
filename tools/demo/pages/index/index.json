@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "smartform": "../../components/smartform"
+  }
+}

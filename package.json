@@ -2,15 +2,31 @@
   "name": "smartform-vant-weapp",
   "version": "0.0.3",
   "description": "smartform for vant-weapp",
-  "main": "dist/smartform-vant-weapp.es.js",
-  "module": "dist/smartform-vant-weapp.es.js",
-  "unpkg": "dist/smartform-vant-weapp.umd.js",
-  "files": [
-    "dist"
-  ],
+  "main": "miniprogram_dist/smartform.js",
   "scripts": {
-    "dev": "vite",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp dev --develop",
+    "watch": "gulp watch --develop --watch",
+    "build": "gulp",
+    "dist": "npm run build",
+    "clean-dev": "gulp clean --develop",
+    "clean": "gulp clean",
+    "test": "jest --bail",
+    "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --bail",
+    "coverage": "jest ./test/* --coverage --bail",
+    "lint": "eslint \"src/**/*.js\" --fix",
+    "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\" --fix"
+  },
+  "miniprogram": "miniprogram_dist",
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testURL": "https://jest.test",
+    "collectCoverageFrom": [
+      "miniprogram_dist/**/*.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "miniprogram_dist"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,5 +44,5 @@
   "dependencies": {
     "@vant/weapp": "^1.10.14",
     "mini-smooth-signature": "^1.0.7"
-  },
+  }
 }
